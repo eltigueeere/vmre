@@ -1,0 +1,108 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h5 style="background-color: white; text-align: center; background-color: #D50080; color: white">Captura de Datos </h5>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="text-align: center;">
+
+      
+      <form action="/team_name_url/" method="post">
+        <div class="form-group">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Partido</th>
+            <th scope="col">Voto postal</th>
+            <th scope="col">Voto internet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><img style="width: 39px; height: 39px;" src="{% static 'cap_datos/img/PAN.png' %}" alt="patido_img"></th>
+            <td><input  class="form-control" id="pan_postal" min="0" type="number" name="name_field" value="voto por postal."></td>
+            <td><input  class="form-control" id="pan_internet" min="0" type="number" name="name_field" value="voto por internet."></td>
+          </tr>
+          
+          <tr>
+            <th scope="row"><img style="width: 39px; height: 39px;" src="{% static 'cap_datos/img/pri.png' %}" alt="patido_img"></th>
+            <td><input  class="form-control" id="pri_postal" min="0" type="number" name="name_field" value="voto por postal."></td>
+            <td><input  class="form-control" id="pri_internet" min="0" type="number" name="name_field" value="voto por internet."></td>
+          </tr>
+          
+          <tr>
+            <th scope="row"><img style="width: 39px; height: 39px;" src="{% static 'cap_datos/img/prd.png' %}" alt="patido_img"></th>
+            <td><input  class="form-control" id="prd_postal" min="0" type="number" name="name_field" value="voto por postal."></td>
+            <td><input  class="form-control" id="prd_internet" min="0" type="number" name="name_field" value="voto por internet."></td>
+          </tr>
+          
+          <tr>
+            <th scope="row"><img style="width: 39px; height: 39px;" src="{% static 'cap_datos/img/verde.png' %}" alt="patido_img"></th>
+            <td><input  class="form-control" id="verde_postal" min="0" type="number" name="name_field" value="voto por postal."></td>
+            <td><input  class="form-control" id="verde_internet" min="0" type="number" name="name_field" value="voto por internet."></td>
+          </tr>
+
+          
+          <tr>
+            <th scope="row"><img style="width: 39px; height: 39px;" src="{% static 'cap_datos/img/pt.png' %}" alt="patido_img"></th>
+            <td><input  class="form-control" id="pt_postal" min="0" type="number" name="name_field" value="voto por postal."></td>
+            <td><input  class="form-control" id="pt_internet" min="0" type="number" name="name_field" value="voto por internet."></td>
+          </tr>
+          
+          <tr>
+            <th scope="row"><img style="width: 39px; height: 39px;" src="{% static 'cap_datos/img/mov_ciuda.png' %}" alt="patido_img"></th>
+            <td><input  class="form-control" id="mov_ciuda_postal" min="0" type="number" name="name_field" value="voto por postal."></td>
+            <td><input  class="form-control" id="mov_ciuda_internet" min="0" type="number" name="name_field" value="voto por internet."></td>
+          </tr>
+
+          
+          <tr>
+            <th scope="row"><img style="width: 39px; height: 39px;" src="{% static 'cap_datos/img/morena.png' %}" alt="patido_img"></th>
+            <td><input  class="form-control" id="morena_postal" min="0" type="number" name="name_field" value="voto por postal."></td>
+            <td><input  class="form-control" id="morena_internet" min="0" type="number" name="name_field" value="voto por internet."></td>
+          </tr>
+
+          
+          <tr>
+            <th scope="row"><img style="width: 79px; height: 39px;" src="{% static 'cap_datos/img/verde_pt_morena.png' %}" alt="patido_img"></th>
+            <td><input  class="form-control" id="verde_pt_morena_postal" min="0" type="number" name="name_field" value="voto por postal."></td>
+            <td><input  class="form-control" id="verde_pt_morena_internet" min="0" type="number" name="name_field" value="voto por internet."></td>
+          </tr>
+          
+          <tr>
+            <th scope="row"><img style="width: 79px; height: 39px;" src="{% static 'cap_datos/img/verde_pt.png' %}" alt="patido_img"></th>
+            <td><input  class="form-control" id="verde_pt_morena_postal" min="0" type="number" name="name_field" value="voto por postal."></td>
+            <td><input  class="form-control" id="verde_pt_morena_internet" min="0" type="number" name="name_field" value="voto por internet."></td>
+          </tr>
+
+          
+          <tr>
+            <th scope="row"><img style="width: 79px; height: 39px;" src="{% static 'cap_datos/img/verde_morena.png' %}" alt="patido_img"></th>
+            <td><input  class="form-control" id="verde_morena_morena_postal" min="0" type="number" name="name_field" value="voto por postal."></td>
+            <td><input  class="form-control" id="verde_morena_morena_internet" min="0" type="number" name="name_field" value="voto por internet."></td>
+          </tr>
+
+
+          
+          <tr>
+            <th scope="row"><img style="width: 79px; height: 39px;" src="{% static 'cap_datos/img/pt_morena.png' %}" alt="patido_img"></th>
+            <td><input  class="form-control" id="pt_morena_morena_postal" min="0" type="number" name="name_field" value="voto por postal."></td>
+            <td><input  class="form-control" id="pt_morena_morena_internet" min="0" type="number" name="name_field" value="voto por internet."></td>
+          </tr>
+          
+         
+        </tbody>
+      </table>
+        <input class="btn btn-secondary btn-lg btn-block" type="submit" value="Guardar">
+    </form>
+    
+      
+    </div>
+  </div>
+</div>
+
+{% endblock %}
