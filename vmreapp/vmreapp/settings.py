@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'generar_acta',
-    'cap_datos'
+    'cap_datos',
+    'funciones'
     
 ]
 
