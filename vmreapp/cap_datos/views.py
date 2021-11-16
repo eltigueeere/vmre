@@ -5,7 +5,7 @@ from cap_datos import models
 
 def cap_datos(request):
 
-    path = "C:\\Users\\Eduardo Guerrero\\Documents\\vmre\\vmreapp\\funciones\estados\\vmre.xlsx"
+    path = "C:\\vmre\data\\vmre.xlsx"
     libro = openpyxl.load_workbook(path)
     
     

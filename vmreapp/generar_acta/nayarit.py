@@ -5,14 +5,15 @@
 from xlrd import open_workbook
 from xlutils.copy import copy
 from numpy.lib import index_tricks
-import pandas as pd
 import numpy as np
 import os
+from pandas.core.reshape.pivot import pivot
+
+import pandas as pd
 import time
 import math
 from datetime import datetime
 from openpyxl import Workbook
-from pandas.core.reshape.pivot import pivot
 from funciones import numero_letras as numerosLetras
 #**********************************PDF
 from PyPDF2 import PdfFileWriter, PdfFileReader

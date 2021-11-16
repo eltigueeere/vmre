@@ -50,7 +50,7 @@
             <a class="nav-link" href="{% url 'cap_datos' %}">Captura de Actas <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'gen_acta' %}">Generación de ACE</a>
+            <a onclick="ga()" class="nav-link" href="{% url 'gen_acta' %}">Generación de ACE</a>
           </li>
         </ul>
       </div>
@@ -105,7 +105,11 @@
     <!-- Bootstrap -->
     <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
+    <script>
+      function ga(){
+        alert("Esperar mensaje en la pantalla.")
+      }
+    </script>
   </body>
 
 </html>
