@@ -119,8 +119,8 @@ def gen_acta(request):
         ('PAN', math.floor(sumaCol['PAN']),numerosLetras.numero_a_letras(math.floor(sumaCol['PAN']))),
         ('PRI', math.floor(sumaCol['PRI']),numerosLetras.numero_a_letras(math.floor(sumaCol['PRI']))),
         ('PRD', math.floor(sumaCol['PRD']),numerosLetras.numero_a_letras(math.floor(sumaCol['PRD']))),
-        ('PT', math.floor(sumaCol['PT']),numerosLetras.numero_a_letras(math.floor(sumaCol['PT']))),
         ('VERDE', math.floor(sumaCol['VERDE']),numerosLetras.numero_a_letras(math.floor(sumaCol['VERDE']))),
+        ('PT', math.floor(sumaCol['PT']),numerosLetras.numero_a_letras(math.floor(sumaCol['PT']))),
         ('MOVIMIENTO CIUDADANO', math.floor(sumaCol['MOVIMIENTO_CIUDADANO']),numerosLetras.numero_a_letras(math.floor(sumaCol['MOVIMIENTO_CIUDADANO']))),
         ('MORENA', math.floor(sumaCol['MORENA']),numerosLetras.numero_a_letras(math.floor(sumaCol['MORENA']))),
         ('CANDIDATOS_NO_REGISTRADOS', math.floor(sumaCol['CANDIDATOS_NO_REGISTRADOS']),numerosLetras.numero_a_letras(math.floor(sumaCol['CANDIDATOS_NO_REGISTRADOS']))),
@@ -228,9 +228,9 @@ def gen_acta(request):
     # create a new PDF with Reportlab
     can = canvas.Canvas(packet, pagesize=letter)
     #can.drawString(90, 529, "Nayarit")
-    #can.drawString(60, 513, str(hora))
-    #can.drawString(190, 513, str(dia))
-    #can.drawString(30, 500, "CENTRO DE ESCRUTINIO Y CÓMPUTO")
+    can.drawString(22,  496, str(hora))
+    can.drawString(109, 496, str(dia))
+    can.drawString(30, 511, "CENTRO DE ESCRUTINIO Y CÓMPUTO")
     can.drawString(90, 296, tb1[0][2]) 
     can.drawString(280, 296, str(tb1[0][1])) 
     can.drawString(90, 277, tb1[1][2]) 
