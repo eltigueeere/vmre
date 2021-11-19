@@ -184,7 +184,7 @@ def gen_acta(request):
 
         read_file = pd.read_excel ("C:\\vmre\\data\\vmre.xlsx")
 
-        #read_file.rename(columns={'VERDE': 'PVEM', 'MOVIMIENTO_CIUDADANO': 'MC', 'VERDE_PT_MORENA': 'PVEM-PT-MORENA', 'VERDE_PT': 'PVEM-PT', 'VERDE_MORENA': 'PVEM-MORENA', 'CANDIDATOS_NO_REGISTRADOS': 'NO_REGISTRADOS', 'VOTOS_NULOS': 'NULOS'  })
+        read_file.rename(columns={'VERDE': 'PVEM', 'MOVIMIENTO_CIUDADANO': 'MC', 'VERDE_PT_MORENA': 'PVEM-PT-MORENA', 'VERDE_PT': 'PVEM-PT', 'VERDE_MORENA': 'PVEM-MORENA', 'PT_MORENA': 'PT-MORENA', 'CANDIDATOS_NO_REGISTRADOS': 'NO_REGISTRADOS', 'VOTOS_NULOS': 'NULOS'  }, inplace = True)
        
         # Write the dataframe object
         # into csv file
