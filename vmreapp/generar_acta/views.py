@@ -37,11 +37,16 @@ def gen_acta(request):
             sumaCol[part] = sumaCol[part] + fraccionVotos
     #**********************************
     def divicionDeVotosSobranteUno(fraccionSobrante, partidos):
-        if(sumaCol[partidos[0]] == sumaCol[partidos[1]]):
-            sumaCol[partidos[0]] = sumaCol[partidos[0]] + fraccionSobrante
-        else:
+        if len(partidos) == 3:
             partidoMayor = elMayor(partidos)
             sumaCol[partidoMayor] = sumaCol[partidoMayor] + fraccionSobrante
+        
+        else:
+            if(sumaCol[partidos[0]] == sumaCol[partidos[1]]):
+                sumaCol[partidos[0]] = sumaCol[partidos[0]] + fraccionSobrante
+            else:
+                partidoMayor = elMayor(partidos)
+                sumaCol[partidoMayor] = sumaCol[partidoMayor] + fraccionSobrante
 
     #**********************************
     def divicionDeVotosSobranteDos(fraccionSobrante, partidos):
@@ -83,8 +88,8 @@ def gen_acta(request):
         elMayorNum=0
         elMayorStr=""
         for part in partidos:
-            if(sumaCol[part] > elMayorNum):
-                elMayorNum = sumaCol[part]
+            if(sumaCol_abc[part] > elMayorNum):
+                elMayorNum = sumaCol_abc[part]
                 elMayorStr = part
                 #print(sumaCol[part])
             #else:
@@ -205,6 +210,7 @@ def gen_acta(request):
     df=vmre.parse('Hoja1')
     #**********************************AGRUPAR
     sumaCol=df.groupby(by=['estados']).sum().groupby(level=[0]).cumsum().loc[estado]
+    sumaCol_abc=df.groupby(by=['estados']).sum().groupby(level=[0]).cumsum().loc[estado]
     
     #**********************************
     divicionDeVotos(fraccionVotos(votosTotalCoalicion=sumaCol['VERDE_PT_MORENA'], dividendo=3), partidos=["VERDE","PT","MORENA"])
