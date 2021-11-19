@@ -88,8 +88,8 @@ def gen_acta(request):
         elMayorNum=0
         elMayorStr=""
         for part in partidos:
-            if(sumaCol[part] > elMayorNum):
-                elMayorNum = sumaCol[part]
+            if(sumaCol_abc[part] > elMayorNum):
+                elMayorNum = sumaCol_abc[part]
                 elMayorStr = part
                 #print(sumaCol[part])
             #else:
@@ -177,7 +177,18 @@ def gen_acta(request):
         return datos
     
     
-    
+        
+    def csv():
+
+        read_file = pd.read_excel ("C:\\vmre\\data\\vmre.xlsx")
+
+        #read_file.rename(columns={'VERDE': 'PVEM', 'MOVIMIENTO_CIUDADANO': 'MC', 'VERDE_PT_MORENA': 'PVEM-PT-MORENA', 'VERDE_PT': 'PVEM-PT', 'VERDE_MORENA': 'PVEM-MORENA', 'CANDIDATOS_NO_REGISTRADOS': 'NO_REGISTRADOS', 'VOTOS_NULOS': 'NULOS'  })
+       
+        # Write the dataframe object
+        # into csv file
+        read_file.to_csv ("C:\\vmre\\data\\datavmre.csv",
+                        index = None,
+                        header=True)
     
     
     
@@ -234,8 +245,8 @@ def gen_acta(request):
     # create a new PDF with Reportlab
     can = canvas.Canvas(packet, pagesize=letter)
     #can.drawString(90, 529, "Nayarit")
-    can.drawString(22,  496, str(hora))
-    can.drawString(109, 496, str(dia))
+    can.drawString(22,  497, str(hora))
+    can.drawString(109, 497, str(dia))
     can.drawString(30, 511, "CENTRO DE ESCRUTINIO Y CÓMPUTO")
     can.drawString(90, 296, tb1[0][2]) 
     can.drawString(280, 296, str(tb1[0][1])) 
@@ -278,14 +289,14 @@ def gen_acta(request):
     can.drawString(590, 430, str(tb2[3][1]))  
     can.drawString(400, 403, tb2[4][2]) 
     can.drawString(590, 403, str(tb2[4][1]))  
-    can.drawString(400, 376, tb2[5][2]) 
-    can.drawString(590, 376, str(tb2[5][1]))  
-    can.drawString(400, 351, tb2[6][2]) 
-    can.drawString(590, 351, str(tb2[6][1]))  
+    can.drawString(400, 378, tb2[5][2]) 
+    can.drawString(590, 378, str(tb2[5][1]))  
+    can.drawString(400, 353, tb2[6][2]) 
+    can.drawString(590, 353, str(tb2[6][1]))  
     can.drawString(400, 324, tb2[7][2]) 
     can.drawString(590, 324, str(tb2[7][1]))  
-    can.drawString(400, 298, tb2[8][2]) 
-    can.drawString(590, 298, str(tb2[8][1]))  
+    can.drawString(400, 300, tb2[8][2]) 
+    can.drawString(590, 300, str(tb2[8][1]))  
     can.drawString(400, 273, tb2[9][2]) 
     can.drawString(590, 273, str(tb2[9][1]))  
     #Tb3
@@ -321,5 +332,7 @@ def gen_acta(request):
     output.write(outputStream)
     outputStream.close()
     print("Termina " + estado)
+    
+    csv()
     
     return render(request, "generar_acta/gen_acta.html")
