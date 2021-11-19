@@ -88,8 +88,8 @@ def gen_acta(request):
         elMayorNum=0
         elMayorStr=""
         for part in partidos:
-            if(sumaCol_abc[part] > elMayorNum):
-                elMayorNum = sumaCol_abc[part]
+            if(sumaCol[part] > elMayorNum):
+                elMayorNum = sumaCol[part]
                 elMayorStr = part
                 #print(sumaCol[part])
             #else:

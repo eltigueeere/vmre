@@ -19,7 +19,7 @@ from django.conf import  settings
 
 
 urlpatterns = [
-    path('core/', include('core.urls')),
+    path('', include('core.urls')),
     path('reglas/', include('reglas.urls')),
     path('inicio/', include('inicio.urls')),
     path('generar_acta/', include('generar_acta.urls')),
