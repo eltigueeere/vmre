@@ -94,6 +94,8 @@ def gen_acta(request):
                 #print(sumaCol[part])
             #else:
                 #print("NADA")
+        if elMayorStr == "":
+            elMayorStr = partidos[0]
         return elMayorStr
     #**********************************
     def excel01():
