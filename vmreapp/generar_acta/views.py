@@ -186,6 +186,25 @@ def gen_acta(request):
 
         read_file.rename(columns={'VERDE': 'PVEM', 'MOVIMIENTO_CIUDADANO': 'MC', 'VERDE_PT_MORENA': 'PVEM-PT-MORENA', 'VERDE_PT': 'PVEM-PT', 'VERDE_MORENA': 'PVEM-MORENA', 'PT_MORENA': 'PT-MORENA', 'CANDIDATOS_NO_REGISTRADOS': 'NO_REGISTRADOS', 'VOTOS_NULOS': 'NULOS'  }, inplace = True)
        
+        #read_file['PAN'][2] = read_file['PAN'][0] + read_file['PAN'][1] 
+        #read_file['PRI'][2] = read_file['PRI'][0] + read_file['PRI'][1] 
+        #read_file['PRD'][2] = read_file['PRD'][0] + read_file['PRD'][1] 
+        #read_file['VERDE'][2] = read_file['VERDE'][0] + read_file['VERDE'][1] 
+        #read_file['PT'][2] = read_file['PT'][0] + read_file['PT'][1] 
+        #read_file['MOVIMIENTO_CIUDADANO'][2] = read_file['MOVIMIENTO_CIUDADANO'][0] + read_file['MOVIMIENTO_CIUDADANO'][1] 
+        #read_file['MORENA'][2] = read_file['MORENA'][0] + read_file['MORENA'][1]
+        #read_file['VERDE_PT_MORENA'][2] = read_file['VERDE_PT_MORENA'][0] + read_file['VERDE_PT_MORENA'][1]
+        #read_file['VERDE_MORENA'][2] = read_file['VERDE_MORENA'][0] + read_file['VERDE_MORENA'][1]
+        #read_file['PT_MORENA'][2] = read_file['PT_MORENA'][0] + read_file['PT_MORENA'][1]
+        #read_file['CANDIDATOS_NO_REGISTRADOS'][2] = read_file['CANDIDATOS_NO_REGISTRADOS'][0] + read_file['CANDIDATOS_NO_REGISTRADOS'][1]
+        #read_file['VOTOS_NULOS'][2] = read_file['VOTOS_NULOS'][0] + read_file['VOTOS_NULOS'][1]
+        #read_file['MORENA'][2] = read_file['MORENA'][0] + read_file['MORENA'][1]
+        #read_file['MORENA'][2] = read_file['MORENA'][0] + read_file['MORENA'][1]
+        #read_file['Total'][2] = read_file['Total'][0] + read_file['Total'][1]
+        
+       
+       
+       
         # Write the dataframe object
         # into csv file
         read_file.to_csv ("C:\\vmre\\data\\datavmre.csv",
